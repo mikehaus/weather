@@ -1,17 +1,26 @@
 import React from 'react';
-import { Button } from 'rsuite';
+import CSS from 'csstype'
+import { FlexboxGrid } from 'rsuite';
 import { StringLiteral } from 'typescript';
 
 interface Props {
     text: string;
 }
 
-export const Weather = ({ text }: Props) => {
+const WEATHER_BOX: CSS.Properties = {
+    top: '10%',
+}
+
+//export const Weather = ({ text }: Props) => {
+
+export const Weather = () => {
     return (
-        <div>"
-            <Button appearance='primary'>
-                {text}
-            </Button>
+        <div className='show-grid' style={WEATHER_BOX}>
+            <FlexboxGrid justify='center'>
+                <FlexboxGrid.Item colspan={16} backgroundColor="#fff">
+
+                </FlexboxGrid.Item>
+            </FlexboxGrid>
         </div>
     )
 }
